@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Would You Do? The Oversleep Crisis</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .retro-code {
+            font-family: 'Courier Prime', monospace;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between">
+
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white py-6 px-4 shadow-md">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <span class="bg-indigo-500 text-indigo-100 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">What Would You Do?</span>
+                <h1 class="text-2xl sm:text-3xl font-extrabold mt-1">The Oversleep Crisis ⏰</h1>
+                <p class="text-indigo-200 text-sm mt-1">How you handle mistakes defines your reputation. Learn how to communicate under pressure.</p>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="switchTab('scenario')" id="tab-btn-scenario" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition bg-white text-indigo-900 shadow-sm">
+                    1. The Decision
+                </button>
+                <button onclick="switchTab('analyzer')" id="tab-btn-analyzer" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition bg-indigo-800 text-indigo-100 hover:bg-indigo-700">
+                    2. Message Draft
+                </button>
+                <button onclick="switchTab('blueprint')" id="tab-btn-blueprint" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition bg-indigo-800 text-indigo-100 hover:bg-indigo-700">
+                    3. Anatomy of an Apology
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl w-full mx-auto px-4 py-8 flex-grow">
+        
+        <!-- SECTION 1: THE SCENARIO DECISION -->
+        <section id="section-scenario" class="tab-content block space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                <div class="flex items-start gap-4">
+                    <div class="bg-rose-100 text-rose-600 rounded-xl p-3 text-3xl">
+                        🚨
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">The Situation: Total Panic Mode</h2>
+                        <p class="text-slate-600 text-sm mt-1">
+                            Your alarm was accidentally set to PM instead of AM. You wake up with a jolt. It's <strong>8:15 AM</strong>. 
+                            Your first school block started at 8:00 AM, and your shift at your part-time job starts at 9:00 AM. 
+                            You are instantly late to school, and you will definitely be late to work.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Choice Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Choice A -->
+                <div onclick="selectChoice('A')" class="bg-white hover:border-rose-400 border-2 border-transparent rounded-2xl p-6 shadow-sm cursor-pointer transition flex flex-col justify-between group">
+                    <div>
+                        <div class="text-3xl mb-4 group-hover:scale-110 transition duration-200">🤫</div>
+                        <h3 class="text-lg font-bold text-slate-800">A) The Ghost Routine</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Stay completely silent. Rush as fast as you can, sneak into school late, and run into work at 9:15 AM hoping nobody notices the clock.
+                        </p>
+                    </div>
+                    <button class="mt-6 w-full py-2 bg-slate-100 group-hover:bg-rose-500 group-hover:text-white rounded-lg text-xs font-bold text-slate-700 transition">Explore Outcome</button>
+                </div>
+
+                <!-- Choice B -->
+                <div onclick="selectChoice('B')" class="bg-white hover:border-amber-400 border-2 border-transparent rounded-2xl p-6 shadow-sm cursor-pointer transition flex flex-col justify-between group">
+                    <div>
+                        <div class="text-3xl mb-4 group-hover:scale-110 transition duration-200">🤥</div>
+                        <h3 class="text-lg font-bold text-slate-800">B) The Creative Excuse</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Send a text blaming your car, a massive traffic accident, or a family emergency. Something dramatic so they feel bad and don't get mad.
+                        </p>
+                    </div>
+                    <button class="mt-6 w-full py-2 bg-slate-100 group-hover:bg-amber-500 group-hover:text-white rounded-lg text-xs font-bold text-slate-700 transition">Explore Outcome</button>
+                </div>
+
+                <!-- Choice C -->
+                <div onclick="selectChoice('C')" class="bg-white hover:border-emerald-400 border-2 border-transparent rounded-2xl p-6 shadow-sm cursor-pointer transition flex flex-col justify-between group">
+                    <div>
+                        <div class="text-3xl mb-4 group-hover:scale-110 transition duration-200">📱</div>
+                        <h3 class="text-lg font-bold text-slate-800">C) Proactive Honesty</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Take 60 seconds *before* leaving the house to notify both your teacher and supervisor. Own the error, give an honest ETA, and apologize briefly.
+                        </p>
+                    </div>
+                    <button class="mt-6 w-full py-2 bg-slate-100 group-hover:bg-emerald-500 group-hover:text-white rounded-lg text-xs font-bold text-slate-700 transition">Explore Outcome</button>
+                </div>
+            </div>
+
+            <!-- Interactive Feedback Screen -->
+            <div id="choice-feedback-card" class="hidden rounded-2xl p-6 transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <span id="feedback-emoji" class="text-4xl"></span>
+                    <div class="space-y-2">
+                        <h4 id="feedback-title" class="text-lg font-extrabold"></h4>
+                        <p id="feedback-desc" class="text-sm leading-relaxed"></p>
+                        <div id="feedback-impact" class="text-xs font-bold pt-2 uppercase tracking-wide"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: LIVE TEXT/EMAIL DRAFTER -->
+        <section id="section-analyzer" class="tab-content hidden space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                    <span class="flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-lg w-8 h-8 font-bold text-sm">2</span>
+                    Crisis Message Draft Analyzer
+                </h2>
+                <p class="text-slate-600 text-sm mt-1">
+                    Let's practice writing the message to your boss/supervisor. Type your actual message below, and our real-time system will score its professionalism based on 4 key ingredients!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <!-- Text editor -->
+                <div class="lg:col-span-7 bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Late text message draft</span>
+                        <span class="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded">Character count: <span id="char-count">0</span></span>
+                    </div>
+                    <textarea id="student-draft" oninput="analyzeDraft()" placeholder="Example: Hey boss, I overslept! Extremely sorry. I will be in by 9:25 AM today..." class="w-full h-40 border border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 leading-relaxed"></textarea>
+                    
+                    <div class="flex justify-between items-center">
+                        <button onclick="loadTemplate()" class="text-xs text-indigo-600 hover:text-indigo-800 font-bold underline transition">Load a helpful starting template</button>
+                        <button onclick="clearDraft()" class="text-xs text-slate-400 hover:text-slate-600 transition">Clear Draft</button>
+                    </div>
+                </div>
+
+                <!-- Analysis Panel -->
+                <div class="lg:col-span-5 bg-slate-950 text-slate-300 p-6 rounded-2xl shadow-md space-y-6">
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-400 tracking-wider uppercase">Live Draft Score</h3>
+                        <div class="flex items-baseline gap-2 mt-2">
+                            <span id="draft-score" class="text-5xl font-extrabold text-white">0</span>
+                            <span class="text-slate-500">/ 100</span>
+                        </div>
+                    </div>
+
+                    <!-- Checklist Criteria -->
+                    <div class="space-y-3 text-xs">
+                        <div id-crit="greeting" class="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800 transition">
+                            <span>👋 Professional Greeting (Hello, Hi, Dear)</span>
+                            <span class="status-icon text-slate-600">❌</span>
+                        </div>
+                        <div id-crit="eta" class="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800 transition">
+                            <span>⏱️ Clear ETA (Time / arrival estimate)</span>
+                            <span class="status-icon text-slate-600">❌</span>
+                        </div>
+                        <div id-crit="apology" class="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800 transition">
+                            <span>🤝 Brief Apology (Sorry, apologize)</span>
+                            <span class="status-icon text-slate-600">❌</span>
+                        </div>
+                        <div id-crit="excuses" class="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800 transition">
+                            <span>🛡️ Zero Over-Explaining (No massive stories)</span>
+                            <span class="status-icon text-slate-600">✔️</span>
+                        </div>
+                    </div>
+
+                    <!-- Live AI Feedback Text -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+                        <span class="text-[10px] uppercase tracking-widest font-extrabold text-indigo-400">Advisor Feedback</span>
+                        <p id="live-feedback-para" class="text-xs leading-relaxed text-slate-400 mt-1">Start drafting your message! Write a short greeting to unlock your first points.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: APOLOGY BLUEPRINT -->
+        <section id="section-blueprint" class="tab-content hidden space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                    <span class="flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-lg w-8 h-8 font-bold text-sm">3</span>
+                    The Perfect Apology Text Blueprint
+                </h2>
+                <p class="text-slate-600 text-sm mt-1">
+                    When you are late, supervisors don't want a 10-minute sob story. They want action and timing details. Click the cards below to build the ultimate crisis formula.
+                </p>
+            </div>
+
+            <!-- Formula Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-white rounded-xl p-4 border border-slate-200 hover:shadow-md transition">
+                    <span class="text-2xl">1️⃣</span>
+                    <h4 class="font-bold text-slate-800 text-sm mt-2">The Greeting</h4>
+                    <p class="text-slate-500 text-xs mt-1">Always address them by name. Skip slang like "Yo" or "Hey dude". Use "Hi [Name]" or "Good morning [Name]".</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-slate-200 hover:shadow-md transition">
+                    <span class="text-2xl">2️⃣</span>
+                    <h4 class="font-bold text-slate-800 text-sm mt-2">The Issue</h4>
+                    <p class="text-slate-500 text-xs mt-1">Be briefly and politely honest. State that you overslept or had a slow start. Do not detail your bathroom routine or dramatic traffic fights.</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-slate-200 hover:shadow-md transition">
+                    <span class="text-2xl">3️⃣</span>
+                    <h4 class="font-bold text-slate-800 text-sm mt-2">The Clear ETA</h4>
+                    <p class="text-slate-500 text-xs mt-1">This is the most important element! Give a specific estimated arrival time (e.g. "9:25 AM"). It helps your supervisor fill schedules.</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-slate-200 hover:shadow-md transition">
+                    <span class="text-2xl">4️⃣</span>
+                    <h4 class="font-bold text-slate-800 text-sm mt-2">The Next Steps</h4>
+                    <p class="text-slate-500 text-xs mt-1">Offer immediate help or to make up for lost time. "I will immediately jump into the tasks as soon as I arrive."</p>
+                </div>
+            </div>
+
+            <!-- Visual template comparison box -->
+            <div class="bg-indigo-50/50 rounded-2xl p-6 border border-indigo-100 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-4 border border-red-200">
+                    <span class="bg-rose-100 text-rose-600 text-[10px] font-bold px-2 py-0.5 rounded">TERRIBLE EXTREME</span>
+                    <p class="retro-code text-xs text-red-700 leading-relaxed mt-3">
+                        "OMG I'm so sorry, my alarm didn't go off and then my dog barfed, and honestly I feel terrible. I'm literally crying right now on my way. I'll be there soon."
+                    </p>
+                    <p class="text-[10px] text-slate-500 mt-2">🚨 No ETA, way too much drama, unprofessional details.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 border border-emerald-200">
+                    <span class="bg-emerald-100 text-emerald-600 text-[10px] font-bold px-2 py-0.5 rounded">EXCELLENT EXAMPLE</span>
+                    <p class="retro-code text-xs text-emerald-800 leading-relaxed mt-3">
+                        "Hi Jordan, I am writing to let you know I had an oversleep error. I will arrive at approximately 9:20 AM. I apologize for the delay and will jump right to the desk."
+                    </p>
+                    <p class="text-[10px] text-slate-500 mt-2">✅ Quick, clear arrival time, professional tone, takes ownership.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-6 px-4 mt-12 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+            <p>© 2026 Future-Ready Newsletters. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" onclick="alertTip()" class="hover:underline text-indigo-400 font-medium">✨ Pro Communication Hack</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Secret tip popup -->
+    <div id="tip-modal" class="hidden fixed inset-0 bg-slate-900/60 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-xl p-6 max-w-sm w-full shadow-lg border border-slate-100 text-center space-y-4">
+            <span class="text-4xl">⏱️</span>
+            <h3 class="text-lg font-bold text-slate-800">The "Pad Your ETA" Rule</h3>
+            <p class="text-slate-600 text-xs leading-relaxed">
+                If you map says you will arrive in exactly 12 minutes (9:12 AM), do not tell your boss you'll arrive at 9:12. Add 5-10 minutes buffer (say 9:20 AM). If you arrive at 9:15, you are early! If you hit slow traffic, you still hit your goal.
+            </p>
+            <button onclick="closeTip()" class="w-full py-2 bg-indigo-600 text-white font-semibold text-xs rounded-lg hover:bg-indigo-700 transition">
+                Got it!
+            </button>
+        </div>
+    </div>
+
+    <!-- Script logic -->
+    <script>
+        // Tab switching
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('block');
+            });
+            document.getElementById(`section-${tabName}`).classList.remove('hidden');
+            document.getElementById(`section-${tabName}`).classList.add('block');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-indigo-900', 'shadow-sm');
+                btn.classList.add('bg-indigo-800', 'text-indigo-100', 'hover:bg-indigo-700');
+            });
+            const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+            activeBtn.classList.remove('bg-indigo-800', 'text-indigo-100', 'hover:bg-indigo-700');
+            activeBtn.classList.add('bg-white', 'text-indigo-900', 'shadow-sm');
+        }
+
+        // Choice Explorer Outcomes
+        const choiceOutcomes = {
+            A: {
+                title: "💀 Outcome: High Stress & Trust Damage",
+                emoji: "🤫",
+                class: "bg-red-50 border border-red-100 text-red-900",
+                desc: "While you're rushing, your supervisor is texting you, asking where you are. Your teacher marks you absent. By staying silent, you left them hanging in an emergency. They assume you don't care about their time. It takes weeks to build that trust back.",
+                impact: "CRISIS SCORE: 20/100 (Silent Panic)"
+            },
+            B: {
+                title: "🤥 Outcome: The Danger of the Web of Lies",
+                emoji: "⚠️",
+                class: "bg-amber-50 border border-amber-100 text-amber-950",
+                desc: "Your supervisor replies, 'Oh no, I hope you are okay! Please send the tow truck receipt when you arrive.' Oh no—now you have to find a receipt or build a story. If they find out you lied, you will likely be fired on the spot. Excuses raise immediate red flags.",
+                impact: "CRISIS SCORE: 45/100 (Unstable Safety)"
+            },
+            C: {
+                title: "🏆 Outcome: Preserved Trust & Respect",
+                emoji: "🙌",
+                class: "bg-emerald-50 border border-emerald-100 text-emerald-950",
+                desc: "Your supervisor replies, 'Thanks for the head-up, I'll have Jake cover your station until 9:20. Drive safely.' Because you took ownership and gave an accurate ETA, your team could adapt. No drama, no lies, just clean professional backup operations.",
+                impact: "CRISIS SCORE: 95/100 (Champion of Accountability)"
+            }
+        };
+
+        function selectChoice(key) {
+            const data = choiceOutcomes[key];
+            const card = document.getElementById('choice-feedback-card');
+            
+            card.className = `${data.class} rounded-2xl p-6 transition-all duration-300 block`;
+            document.getElementById('feedback-emoji').textContent = data.emoji;
+            document.getElementById('feedback-title').textContent = data.title;
+            document.getElementById('feedback-desc').textContent = data.desc;
+            document.getElementById('feedback-impact').textContent = data.impact;
+
+            // Highlight chosen item column
+            card.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Draft Live Analyzer
+        function analyzeDraft() {
+            const draft = document.getElementById('student-draft').value;
+            document.getElementById('char-count').textContent = draft.length;
+
+            let score = 0;
+            let checks = {
+                greeting: false,
+                eta: false,
+                apology: false,
+                excuses: true // Assume true unless we find massive sob stories
+            };
+
+            // 1. Check greeting
+            const greetings = ["hi", "hello", "good morning", "dear", "hey jordan", "jordan", "hey mr", "hey ms"];
+            const words = draft.toLowerCase();
+            checks.greeting = greetings.some(g => words.includes(g));
+
+            // 2. Check ETA
+            const etaPatterns = [
+                /\d{1,2}:\d{2}/, // Matches time like 9:20, 9:30
+                /arrive at/, 
+                /eta/, 
+                /be there by/,
+                /be there in/
+            ];
+            checks.eta = etaPatterns.some(regex => regex.test(words));
+
+            // 3. Check apology
+            const apologyKeywords = ["sorry", "apologize", "apology", "overslept", "oversleep", "late"];
+            checks.apology = apologyKeywords.some(keyword => words.includes(keyword));
+
+            // 4. Over-explaining check
+            if (draft.length > 250 || words.includes("dog") || words.includes("alarm didn't") || words.includes("car didn't") || words.includes("flat tire") || words.includes("broken")) {
+                checks.excuses = false;
+            }
+
+            // Calculate score
+            if (checks.greeting) score += 25;
+            if (checks.eta) score += 30;
+            if (checks.apology) score += 25;
+            if (checks.excuses) score += 20;
+
+            // Update UI elements
+            document.getElementById('draft-score').textContent = score;
+            
+            updateCriteriaStyle('greeting', checks.greeting);
+            updateCriteriaStyle('eta', checks.eta);
+            updateCriteriaStyle('apology', checks.apology);
+            updateCriteriaStyle('excuses', checks.excuses);
+
+            // Update live feedback text paragraph
+            const feedbackEl = document.getElementById('live-feedback-para');
+            if (score === 0) {
+                feedbackEl.textContent = "Start writing! Address your supervisor Jordan and offer a quick ETA.";
+            } else if (score < 50) {
+                feedbackEl.textContent = "Great start. Make sure to specify an ETA (like '9:20 AM') so your supervisor knows exactly when to expect you!";
+            } else if (score < 80) {
+                feedbackEl.textContent = "You're getting closer! Add a quick, professional greeting or a polite, brief apology to keep the tone perfect.";
+            } else if (score === 80 && !checks.excuses) {
+                feedbackEl.textContent = "Draft looks complete, but it has too many excuses! Try to condense it—strip out the details about alarms or car trouble. Keep it short and robust.";
+            } else if (score === 100) {
+                feedbackEl.textContent = "Perfect draft! This message is polite, proactive, clean, and sets expectations beautifully. Ready to embed in your professional arsenal! 🏆";
+            }
+        }
+
+        function updateCriteriaStyle(id, success) {
+            const el = document.querySelector(`[id-crit="${id}"]`);
+            const icon = el.querySelector('.status-icon');
+            if (success) {
+                el.classList.remove('border-slate-800', 'bg-slate-900', 'text-slate-400');
+                el.classList.add('border-emerald-800', 'bg-emerald-950/20', 'text-emerald-400');
+                icon.textContent = "✔️";
+            } else {
+                el.classList.remove('border-emerald-800', 'bg-emerald-950/20', 'text-emerald-400');
+                el.classList.add('border-slate-800', 'bg-slate-900', 'text-slate-400');
+                icon.textContent = "❌";
+            }
+        }
+
+        function loadTemplate() {
+            document.getElementById('student-draft').value = "Hi Jordan, I am writing to let you know I had an oversleep error. I should arrive at approximately 9:20 AM. I apologize for the delay and will get right to work upon arrival.";
+            analyzeDraft();
+        }
+
+        function clearDraft() {
+            document.getElementById('student-draft').value = "";
+            analyzeDraft();
+        }
+
+        // Tips Custom Modal
+        function alertTip() {
+            document.getElementById('tip-modal').classList.remove('hidden');
+        }
+        function closeTip() {
+            document.getElementById('tip-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
